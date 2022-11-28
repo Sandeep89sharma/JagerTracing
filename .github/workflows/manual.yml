@@ -33,7 +33,7 @@ jobs:
       run: |
         curl --request POST 'https://api.github.com/repos/Sandeep89sharma/JagerTracing/actions/workflows/manual.yml/dispatches \
         --header 'Content-Type: application/json' \
-        --header 'Authorization: Bearer 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' \
+        --header 'Authorization: Bearer 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' \
         --data-raw '{
               "ref":"master"
               "inputs":{
