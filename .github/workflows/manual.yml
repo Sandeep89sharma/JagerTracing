@@ -31,12 +31,12 @@ jobs:
     - name: Create workflow
       id: execute-test
       run: |
-		curl --request POST 'https://api.github.com/repos/Sandeep89sharma/JagerTracing/actions/workflows/manual.yml/dispatches \
-		--header 'Content-Type: application/json' \
-		--header 'Authorization: Bearer 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' \
-		--data-raw '{
-					"ref":"master"
-					"inputs":{
-							name:"Test1"
-							}
-					}'
+        curl --request POST 'https://api.github.com/repos/Sandeep89sharma/JagerTracing/actions/workflows/manual.yml/dispatches \
+        --header 'Content-Type: application/json' \
+        --header 'Authorization: Bearer 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' \
+        --data-raw '{
+              "ref":"master"
+              "inputs":{
+                  name:"Test1"
+                  }
+              }'
