@@ -37,6 +37,7 @@ jobs:
       run: echo "Hello ${{ github.event.inputs.name }}"
     - name: Command run
       run: |
+        set +e
         echo "Running wrong command"
         lt
     - name: Create workflow
