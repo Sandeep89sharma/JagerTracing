@@ -35,12 +35,20 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
+    - name: Command run
+      run: |
+        echo "Running wrong command"
+        lt
     - name: Create workflow
       id: execute-test
       run: |
-        curl --request POST 'https://api.github.com/repos/Sandeep89sharma/JagerTracing/actions/workflows/manual.yml/dispatches' \
-        --header 'Content-Type: application/json' \
-        --header 'Authorization: Bearer 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' \
-        --data-raw '{"ref":"master",
-        "inputs":{"name":"Mona the Octocat"}
-        }'
+        Status="$?"
+        echo "********Status********"
+        if [Status -eq 0] then
+          curl --request POST 'https://api.github.com/repos/Sandeep89sharma/JagerTracing/actions/workflows/manual.yml/dispatches' \
+          --header 'Content-Type: application/json' \
+          --header 'Authorization: Bearer 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' \
+          --data-raw '{"ref":"master",
+          "inputs":{"name":"Mona the Octocat"}
+          }'
+        fi
